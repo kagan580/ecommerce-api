@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="sign in.js"></script>
+    <title>Sign In</title>
+    <script src="../controller/signin.js"></script>
+    <script src="../controller/front.js"></script>
+</head>
+
+<body style="background-image:url(/media/pexels-photo-1072179.jpeg)" onload="createTable()">
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a style="color: aliceblue;" class="navbar-brand" href="#">
+        <img src="/media/WhatsApp Görsel 2025-05-12 saat 15.15.14_b15560e9.jpg" onclick="directorMain()" alt="Site İsmi" style="margin-left: 50px; height: 50px;">
+      </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            </ul>
+            
+            <form class="d-flex position-relative" role="search" onsubmit="return handleSearch(event)">
+          <input class="form-control me-2" id="searchInput" type="search" placeholder="Search" aria-label="Search"
+            oninput="searchLive()">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+          <div id="searchResults" class="list-group position-absolute w-100 mt-5" style="z-index: 1000;"></div>
+        </form>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#" style="color: aliceblue;" onclick="directorLogin()">Giriş</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" style="display:none ;">Üye Ol</a>
+                  </li>
+                  
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#" style="display:none ;">Sepet</a>
+                    </li>
+          </div>
+        </div>
+      </nav>
+       
+        
+             
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                   
+                </div>
+                <div class="col-md-4">
+                     
+                </div>
+                <div class="col-md-4">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+               
+            </div>
+            <div class="col-md-4">
+                <div class="container-md">
+                   
+                   
+                </div>
+                <div class="container-md">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="col-md-4">
+                            <label style="color: aliceblue;"for="validationCustom01" class="form-label">First name</label>
+             <!------>               <input type="text" class="form-control" id="name" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: aliceblue;"for="validationCustom02" class="form-label">Last name</label>
+            <!---->                <input type="text" class="form-control" id="surname" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: aliceblue;"for="validationCustomUsername" class="form-label">Username</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+           <!---->                     <input type="text" class="form-control" id="username" 
+                                    aria-describedby="inputGroupPrepend" required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label style="color: aliceblue;"for="validationCustom03" class="form-label">City</label>
+        <!------>                    <input type="text" class="form-control" id="city" required>
+                            <div class="invalid-feedback">
+                                Please provide a valid city.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label style="color: aliceblue;"for="validationCustom04" class="form-label">State</label>
+       <!-------->                     <select class="form-select" id="state" required>
+                                <option selected disabled value="">Country</option>
+                                <option value="1">Türkiye</option>
+                                <option value="2">Azerbaycan</option>
+                                <option value="3">Türkmenistan</option>
+                                <option value="1">Kazakistan</option>
+                                <option value="2">Kırgızistan</option>
+                                <option value="3">Özbekistan</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label style="color: aliceblue;"class="form-check-label" for="invalidCheck">
+                                    Agree to terms and conditions
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+              
+            </div>
+            <div class="col-md-4">
+                <br>
+                <br>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="Password1" placeholder="Password">
+      <!------>              <label for="floatingPassword">Password</label>
+                </div>
+                <br>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="Password2" placeholder="Password">
+      <!---------->              <label for="floatingPassword">Password Again</label>
+                </div>
+                 <br>
+                 <button type="submit" class="btn btn-primary" onclick="signin()">Submit</button>
+            </div>
+            <div class="col">
+                
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

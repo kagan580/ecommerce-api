@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../controller/productAdd.js" defer></script>
+  <script src="../controller/front.js" defer></script>
+</head>
+
+<body style="background-image:url(/media/pexels-photo-1072179.jpeg)" onload="selectCategory(); selectBrand();">
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+     <a style="color: aliceblue;" class="navbar-brand" href="#">
+        <img src="/media/WhatsApp Görsel 2025-05-12 saat 15.15.14_b15560e9.jpg" onclick="directorMain()" alt="Site İsmi" style="margin-left: 50px; height: 50px;">
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a style="color: aliceblue;" class="nav-link" href="main.html">Anasayfa</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <h2 style="color: aliceblue;">Ürün Ekle</h2>
+    <div class="row">
+      <!-- Resim Yükleme ve Önizleme -->
+      <div class="col-md-4">
+        <label style="color: aliceblue;"for="formFile" class="form-label">Ürün Resmi</label>
+        <input class="form-control" type="file" id="formFile" accept="image/*">
+        <img id="resim" class="img-fluid mt-2" src="" alt="Resim Önizleme">
+        <button class="btn btn-sm btn-primary mt-2" onclick="addImage()">Önizleme</button>
+        <button class="btn btn-sm btn-danger mt-2" onclick="deleteImage()">Sil</button>
+      </div>
+
+      <!-- Ürün Bilgileri -->
+      <div class="col-md-8">
+        <div class="mb-2">
+          <label style="color: aliceblue;">Kategori</label>
+          <select id="kategori" class="form-select"></select>
+        </div>
+
+        <div class="mb-2">
+          <label style="color: aliceblue;">Marka</label>
+          <select id="MarkaUrun" class="form-select" onchange="addSelectBrand()"></select>
+        </div>
+
+        <!-- Ürün Adı -->
+        <div class="mb-2">
+          <label style="color: aliceblue;">Ürün Adı</label>
+          <input type="text" id="urun" class="form-control" placeholder="Ürün adı girin">
+        </div>
+
+        <!-- Stok Miktarı -->
+        <div class="mb-2">
+          <label style="color: aliceblue;">Stok</label>
+          <input type="number" id="miktar" class="form-control" min="1" placeholder="Stok miktarı">
+        </div>
+
+        <!-- Fiyat -->
+        <div class="mb-2">
+          <label style="color: aliceblue;">Fiyat (TL)</label>
+          <input type="number" id="fiyat" class="form-control" step="0.01" placeholder="Fiyat">
+        </div>
+
+        <!-- Ürün Ekleme Butonu -->
+        <button class="btn btn-success" onclick="addProduct()">Ürün Ekle</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
