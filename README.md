@@ -41,20 +41,21 @@ It’s designed to be **scalable, maintainable, and secure** — ready for produ
 
 ## 📁 Project Structure
 
+```bash
 ecommerce-api/
-├── controller/ # Business logic and request handlers
-├── routes/ # API endpoints
-├── view/ # Frontend templates (optional)
-├── media/ # Static or uploaded files
+├── controller/         # Business logic and request handlers
+├── routes/             # API endpoints
+├── view/               # Frontend templates (optional)
+├── media/              # Static or uploaded files
 ├── db/
-│ ├── schema.sql # Database schema (DDL only)
-│ └── db.js # MySQL connection pool with dotenv
-├── .env.example # Environment variable template
-├── .gitignore # Ignore rules (.env, node_modules, etc.)
-├── app.js # Main entry point
-├── package.json # Project metadata
-└── README.md # Documentation
-
+│   ├── schema.sql      # Database schema (DDL only)
+│   └── db.js           # MySQL connection pool with dotenv
+├── .env.example        # Environment variable template
+├── .gitignore          # Ignore rules (.env, node_modules, etc.)
+├── app.js              # Main entry point
+├── package.json        # Project metadata
+└── README.md           # Documentation
+```
 
 ---
 
@@ -64,14 +65,16 @@ ecommerce-api/
 ```bash
 git clone https://github.com/kagan580/ecommerce-api.git
 cd ecommerce-api
+```
 
-2️⃣ Install dependencies
+### 2️⃣ Install dependencies
+```bash
 npm install
+```
 
-3️⃣ Configure environment variables
-
-Create a .env file based on .env.example:
-
+### 3️⃣ Configure environment variables
+Create a `.env` file based on `.env.example`:
+```bash
 DB_HOST=localhost
 DB_PORT=3306
 DB_NAME=ecommerce_db
@@ -80,65 +83,81 @@ DB_PASSWORD=your_secure_password
 
 PORT=8080
 NODE_ENV=development
+```
 
+> ⚠️ **Never commit or upload your `.env` file** — it contains sensitive credentials.
 
-⚠️ Never commit or upload your .env file — it contains sensitive credentials.
+---
 
-🗄️ Database Setup
+## 🗄️ Database Setup
+
+```bash
 mysql -u <USER> -p < db/schema.sql
+```
 
+Verify that your tables (`product`, `category`, `customer`, etc.) were created successfully.
 
-Verify that your tables (product, category, customer, etc.) were created successfully.
+---
 
-🧠 Example API Endpoints
-Method	Endpoint	Description
-GET	/products	Fetch all products
-GET	/products/:id	Fetch a specific product
-POST	/cart	Add item to cart
-DELETE	/cart/:id	Remove item from cart
-POST	/checkout	Process checkout
-POST	/auth/login	User login (planned)
-POST	/auth/register	User registration (planned)
-💻 Running the Application
+## 🧠 Example API Endpoints
+
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| **GET** | `/products` | Fetch all products |
+| **GET** | `/products/:id` | Fetch a specific product |
+| **POST** | `/cart` | Add item to cart |
+| **DELETE** | `/cart/:id` | Remove item from cart |
+| **POST** | `/checkout` | Process checkout |
+| **POST** | `/auth/login` | User login *(planned)* |
+| **POST** | `/auth/register` | User registration *(planned)* |
+
+---
+
+## 💻 Running the Application
+
+```bash
 node app.js
+```
 
+Once started, open:  
+👉 [http://localhost:8080](http://localhost:8080)
 
-Once started, open:
-👉 http://localhost:8080
+---
 
-🔒 Security Practices
+## 🔒 Security Practices
 
-.env and process.env files are excluded via .gitignore
+- `.env` and `process.env` files are **excluded** via `.gitignore`
+- Secure MySQL connection via environment variables  
+- Connection pooling for stability and performance  
+- Always use HTTPS in production  
+- Rotate database passwords if ever exposed  
 
-Secure MySQL connection via environment variables
+---
 
-Connection pooling for stability and performance
-
-Always use HTTPS in production
-
-Rotate database passwords if ever exposed
-
-☁️ Deployment Ready
+## ☁️ Deployment Ready
 
 Easily deploy to:
+- 🌐 **Render**, **Railway**, or **Heroku**
+- ☁️ **AWS EC2 / Lightsail**
+- 🐳 **Docker containers**
+- 🧩 Any Linux-based VPS
 
-🌐 Render, Railway, or Heroku
+---
 
-☁️ AWS EC2 / Lightsail
+## 🧾 License
 
-🐳 Docker containers
-
-🧩 Any Linux-based VPS
-
-🧾 License
-
-This project is licensed under the MIT License —
+This project is licensed under the **MIT License** —  
 You are free to use, modify, and distribute it for personal or commercial purposes.
 
-👑 Author
+---
 
-Developed by: @kagan580
+## 👑 Author
 
+**Developed by:** [@kagan580](https://github.com/kagan580)  
 Crafted with ⚡ focus, ☕ caffeine, and 👑 perfection.
 
-<p align="center"> <i>“Great code is not written — it is refined.”</i> </p> ```
+---
+
+<p align="center">
+  <i>“Great code is not written — it is refined.”</i>
+</p>
